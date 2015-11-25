@@ -4,7 +4,10 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="FormationJPA">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
+		<class>com.m2i.formation.media.entities.Author</class>
 		<class>com.m2i.formation.media.entities.Media</class>
+		<class>com.m2i.formation.media.entities.Page</class>
+		<class>com.m2i.formation.media.entities.Publisher</class>
 
 		<properties>
 
