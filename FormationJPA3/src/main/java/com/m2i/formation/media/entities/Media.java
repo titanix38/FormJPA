@@ -12,22 +12,22 @@ import java.util.Date;
 @Entity
 @Table(name="media")
 @NamedQuery(name="Media.findAll", query="SELECT m FROM Media m")
-public class Media implements Serializable
+public class Media implements Serializable,IEntity
 {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(unique=true, nullable=false)
-	private int id;
+	private Integer id;
 
-	private int category;
+	private Integer category;
 
 	@Temporal(TemporalType.DATE)
 	private Date dateSortie;
 
 	@Column(nullable=false)
-	private int id_Publisher;
+	private Integer id_Publisher;
 
 	@Column(length=25)
 	private String isbn;
@@ -35,9 +35,9 @@ public class Media implements Serializable
 	@Column(length=25)
 	private String lang;
 
-	private int nbPage;
+	private Integer nbPage;
 
-	private int nbTrack;
+	private Integer nbTrack;
 
 	@Column(nullable=false)
 	private float price;
@@ -46,24 +46,24 @@ public class Media implements Serializable
 	private String title;
 
 	@Column(nullable=false)
-	private int type;
+	private Integer type;
 
 	public Media() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
-	public int getCategory() {
+	public Integer getCategory() {
 		return this.category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(Integer category) {
 		this.category = category;
 	}
 
@@ -75,11 +75,11 @@ public class Media implements Serializable
 		this.dateSortie = dateSortie;
 	}
 
-	public int getId_Publisher() {
+	public Integer getId_Publisher() {
 		return this.id_Publisher;
 	}
 
-	public void setId_Publisher(int id_Publisher) {
+	public void setId_Publisher(Integer id_Publisher) {
 		this.id_Publisher = id_Publisher;
 	}
 
@@ -99,19 +99,19 @@ public class Media implements Serializable
 		this.lang = lang;
 	}
 
-	public int getNbPage() {
+	public Integer getNbPage() {
 		return this.nbPage;
 	}
 
-	public void setNbPage(int nbPage) {
+	public void setNbPage(Integer nbPage) {
 		this.nbPage = nbPage;
 	}
 
-	public int getNbTrack() {
+	public Integer getNbTrack() {
 		return this.nbTrack;
 	}
 
-	public void setNbTrack(int nbTrack) {
+	public void setNbTrack(Integer nbTrack) {
 		this.nbTrack = nbTrack;
 	}
 
@@ -131,11 +131,11 @@ public class Media implements Serializable
 		this.title = title;
 	}
 
-	public int getType() {
+	public Integer getType() {
 		return this.type;
 	}
 
-	public void setType(int type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
