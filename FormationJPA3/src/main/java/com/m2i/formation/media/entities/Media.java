@@ -18,9 +18,9 @@ public class Media implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
-	private int category;
+	private Integer category;
 
 	@Temporal(TemporalType.DATE)
 	private Date dateSortie;
@@ -29,15 +29,15 @@ public class Media implements Serializable {
 
 	private String lang;
 
-	private int nbPage;
+	private Integer nbPage;
 
-	private int nbTrack;
+	private Integer nbTrack;
 
 	private float price;
 
 	private String title;
 
-	private int type;
+	private Integer type;
 
 	//bi-directional many-to-one association to Publisher
 	@ManyToOne
@@ -59,7 +59,7 @@ public class Media implements Serializable {
 		return this.id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 
@@ -67,7 +67,7 @@ public class Media implements Serializable {
 		return this.category;
 	}
 
-	public void setCategory(int category) {
+	public void setCategory(Integer category) {
 		this.category = category;
 	}
 
@@ -99,15 +99,15 @@ public class Media implements Serializable {
 		return this.nbPage;
 	}
 
-	public void setNbPage(int nbPage) {
+	public void setNbPage(Integer nbPage) {
 		this.nbPage = nbPage;
 	}
 
-	public int getNbTrack() {
+	public Integer getNbTrack() {
 		return this.nbTrack;
 	}
 
-	public void setNbTrack(int nbTrack) {
+	public void setNbTrack(Integer nbTrack) {
 		this.nbTrack = nbTrack;
 	}
 
@@ -131,7 +131,7 @@ public class Media implements Serializable {
 		return this.type;
 	}
 
-	public void setType(int type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
 
