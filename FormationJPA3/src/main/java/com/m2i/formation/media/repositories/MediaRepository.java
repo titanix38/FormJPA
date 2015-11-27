@@ -16,7 +16,7 @@ public class MediaRepository extends AbstractRepository<Media> implements IUoW, 
 
 	private EntityManagerFactory emf = EMFAlone.getInstance();
 	private EntityManager em = emf.createEntityManager();
-	private EntityTransaction et;
+	private EntityTransaction transaction;
 
 //	@Override
 //	public void commit()
@@ -24,17 +24,17 @@ public class MediaRepository extends AbstractRepository<Media> implements IUoW, 
 //		et.commit();
 //	}
 
-//	@Override
-//	public EntityTransaction getTransaction()
-//	{
-//		return this.et;
-//	}
+	@Override
+	public EntityTransaction getTransaction()
+	{
+		return this.transaction;
+	}
 
-//	@Override
-//	public void setTransaction(EntityTransaction et)
-//	{
-//		this.et = this.em.getTransaction();
-//	}
+	@Override
+	public void setTransaction(EntityTransaction et)
+	{
+		this.transaction = et;
+	}
 
 	@Override
 	public EntityManager getEntityManager()

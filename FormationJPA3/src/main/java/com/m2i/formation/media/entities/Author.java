@@ -2,7 +2,6 @@ package com.m2i.formation.media.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 
@@ -17,7 +16,7 @@ public class Author implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+	private Integer id;
 
 	private String firstName;
 
@@ -31,7 +30,7 @@ public class Author implements Serializable {
 			@JoinColumn(name="id_Author")
 			}
 		, inverseJoinColumns={
-			@JoinColumn(name="id")
+			@JoinColumn(name="id_Media")
 			}
 		)
 	private List<Media> medias;
@@ -39,7 +38,7 @@ public class Author implements Serializable {
 	public Author() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 

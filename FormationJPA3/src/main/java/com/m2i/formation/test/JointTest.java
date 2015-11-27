@@ -20,7 +20,7 @@ public class JointTest
 	public void publisherNametest()
 	{
 		mr.setEntityManager(emf.createEntityManager());
-		List<Author> la = mr.getById(1).getAuthors();
+		List<Author> la = mr.getById(2).getAuthors();
 		
 		for(Author a:la)
 		{

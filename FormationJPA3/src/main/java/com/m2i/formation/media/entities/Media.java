@@ -2,7 +2,6 @@ package com.m2i.formation.media.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.Date;
 import java.util.List;
 
@@ -39,14 +38,27 @@ public class Media implements Serializable {
 
 	private Integer type;
 
+	//bi-directional many-to-many association to Author
+	@ManyToMany(mappedBy="medias",cascade=CascadeType.PERSIST)
+	private List<Author> authors;
+
+	//bi-directional many-to-many association to Cart
+	@ManyToMany
+	@JoinTable(
+		name="cartmedia"
+		, joinColumns={
+			@JoinColumn(name="id_Media")
+			}
+		, inverseJoinColumns={
+			@JoinColumn(name="id")
+			}
+		)
+	private List<Cart> carts;
+
 	//bi-directional many-to-one association to Publisher
 	@ManyToOne
 	@JoinColumn(name="id_Publisher")
 	private Publisher publisher;
-
-	//bi-directional many-to-many association to Author
-	@ManyToMany(mappedBy="medias")
-	private List<Author> authors;
 
 	//bi-directional many-to-one association to Page
 	@OneToMany(mappedBy="media")
@@ -55,7 +67,7 @@ public class Media implements Serializable {
 	public Media() {
 	}
 
-	public int getId() {
+	public Integer getId() {
 		return this.id;
 	}
 
@@ -63,7 +75,7 @@ public class Media implements Serializable {
 		this.id = id;
 	}
 
-	public int getCategory() {
+	public Integer getCategory() {
 		return this.category;
 	}
 
@@ -95,7 +107,7 @@ public class Media implements Serializable {
 		this.lang = lang;
 	}
 
-	public int getNbPage() {
+	public Integer getNbPage() {
 		return this.nbPage;
 	}
 
@@ -127,20 +139,12 @@ public class Media implements Serializable {
 		this.title = title;
 	}
 
-	public int getType() {
+	public Integer getType() {
 		return this.type;
 	}
 
 	public void setType(Integer type) {
 		this.type = type;
-	}
-
-	public Publisher getPublisher() {
-		return this.publisher;
-	}
-
-	public void setPublisher(Publisher publish) {
-		this.publisher = publish;
 	}
 
 	public List<Author> getAuthors() {
@@ -149,6 +153,22 @@ public class Media implements Serializable {
 
 	public void setAuthors(List<Author> authors) {
 		this.authors = authors;
+	}
+
+	public List<Cart> getCarts() {
+		return this.carts;
+	}
+
+	public void setCarts(List<Cart> carts) {
+		this.carts = carts;
+	}
+
+	public Publisher getPublisher() {
+		return this.publisher;
+	}
+
+	public void setPublisher(Publisher publisher) {
+		this.publisher = publisher;
 	}
 
 	public List<Page> getPages() {

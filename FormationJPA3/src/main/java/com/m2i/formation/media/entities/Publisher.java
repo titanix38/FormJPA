@@ -2,7 +2,6 @@ package com.m2i.formation.media.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
-
 import java.util.List;
 
 

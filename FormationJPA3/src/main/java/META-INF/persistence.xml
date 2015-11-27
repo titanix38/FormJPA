@@ -8,6 +8,7 @@
 		<class>com.m2i.formation.media.entities.Media</class>
 		<class>com.m2i.formation.media.entities.Page</class>
 		<class>com.m2i.formation.media.entities.Publisher</class>
+		<class>com.m2i.formation.media.entities.Cart</class>
 
 		<properties>
 
