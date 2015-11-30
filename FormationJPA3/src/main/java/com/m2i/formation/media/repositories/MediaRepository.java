@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
+import javax.persistence.NamedQuery;
 import javax.persistence.Query;
 
 import com.m2i.formation.media.entities.IEntity;
@@ -48,8 +49,8 @@ public class MediaRepository extends AbstractRepository<Media> implements IUoW, 
 		this.em = em;
 	}
 
-	@SuppressWarnings("unchecked")
-	@Override
+	@SuppressWarnings("unchecked")	
+	@Override	
 	public List<Media> getAll()
 	{
 		Query query = getEntityManager().createQuery("select m from Media m");
